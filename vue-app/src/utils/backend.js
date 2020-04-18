@@ -1,5 +1,5 @@
 console.log(process.env.VUE_APP_HOSTNAME)
-const casesUrl = process.env.VUE_APP_HOSTNAME ? `http://${process.env.VUE_APP_HOSTNAME}.herokuapp.com` : 'http://localhost:3000'
+const casesUrl = process.env.NODE_ENV === 'production' ? `https://${process.env.VUE_APP_HOSTNAME}.herokuapp.com` : 'http://localhost:3000'
 
 module.exports = {
   fetch: async (searchTerm) => {
