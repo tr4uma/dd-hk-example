@@ -1,22 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <case-list />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CaseList from './components/CaseList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CaseList
   }
 }
 </script>
 
 <style>
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,5 +35,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 </style>

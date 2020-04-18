@@ -2,22 +2,27 @@ const express = require('express');
 const router = express.Router();
 const { Client } = require('pg')
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL
-})
+
+
 
 
 
 /* GET users listing. */
 router.get('/', async (req, res, next) => {
   try {
+    const client = new Client({
+      connectionString: process.env.DATABASE_URL
+    })
     await client.connect()
-    const result = await client.query('SELECT * from salesforce.case')
-    client.end()
+    let queryString = 'SELECT * from salesforce.case'
+    if(req.query !== undefined && req.query.search !== undefined){
+      queryString += ` WHERE title like '%${req.query.search}%'`
+    }
+    const result = await client.query(queryString)
     res.send(result.rows);
+    client.end()
   } catch (err) {
     console.log(err)
-    console.log('wa')
     res.sendStatus(500)
   }
 });
