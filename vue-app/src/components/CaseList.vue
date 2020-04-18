@@ -25,9 +25,7 @@
 </template>
 
 <script>
-const fetch = require("node-fetch");
-
-const casesUrl = process.env.HEROKU_APP_NAME ? `http://${process.env.HEROKU_APP_NAME}.herokuapp.com` : 'http://localhost:3000'
+const caseFetch = require("../utils/backend").fetch;
 
 export default {
   name: "CaseList",
@@ -39,7 +37,7 @@ export default {
   },
   methods: {
     fetchCases: async function() {
-      const res = await (await fetch(`${casesUrl}/cases${this.searchTerm?'?search='+this.searchTerm:''}`, { method: 'GET' })).json();
+      const res = await caseFetch(this.searchTerm)
       console.log(res)
       this.caseList = res
     }
