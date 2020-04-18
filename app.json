@@ -1,0 +1,20 @@
+{
+  "name": "DD Heroku Template",
+  "description": "A small project template for heroku+salesforce projects",
+  "keywords": [
+    "heroku",
+    "salesforce",
+    "template"
+  ],
+  "addons": [
+    "papertrail:choklad",
+    "herokuconnect:demo",
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {}
+}
