@@ -19,6 +19,12 @@
   "env": {
     "NODE_ENV": {
       "value": "production"
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+        "required": true
     }
-}
+  }
 }
