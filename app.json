@@ -25,9 +25,6 @@
     },
     "HEROKU_PARENT_APP_NAME": {
         "required": true
-    },
-    "VUE_APP_HOSTNAME": {
-      "value": "$HEROKU_APP_NAME"
     }
   }
 }
