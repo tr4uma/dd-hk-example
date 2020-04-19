@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
     await client.connect()
     let queryString = 'SELECT * from salesforce.case'
     if(req.query !== undefined && req.query.search !== undefined){
-      queryString += ` WHERE title like '%${req.query.search}%'`
+      queryString += ` WHERE subject like '%${req.query.search}%'`
     }
     const result = await client.query(queryString)
     res.send(result.rows);
