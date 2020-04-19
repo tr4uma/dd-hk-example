@@ -7,7 +7,6 @@
     "template"
   ],
   "addons": [
-    "papertrail:choklad",
     "herokuconnect:demo",
     "heroku-postgresql:hobby-dev"
   ],
